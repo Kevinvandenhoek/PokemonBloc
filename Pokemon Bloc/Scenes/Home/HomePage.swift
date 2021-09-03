@@ -21,35 +21,7 @@ struct HomePage: View {
     
     // MARK: View
     var body: some View {
-        contentView
-            .navigationTitle(bloc.state.title)
-            .toolbar {
-                NavigationLink(bloc.state.filters.isEmpty ? "Filters" : "Filters (\(bloc.state.filters.count))") {
-                    router.homeShowFilters(selected: bloc.state.filters, onUpdate: { bloc.handle(.didUpdateFilters($0)) })
-                }
-            }
-            .onLoad(perform: { bloc.handle(.initialize) })
-    }
-}
-
-// MARK: View Builders
-private extension HomePage {
-    
-    @ViewBuilder var contentView: some View {
-        switch bloc.state.pokemonSection {
-        case .initial:
-            Color.clear
-        case .loading:
-            ProgressView()
-        case .error(let title, let description, let action):
-            VStack {
-                Text(title)
-                Text(description)
-                OptionalView(action) { action in
-                    Button(action.title, action: action.invoke)
-                }
-            }
-        case .loaded(let pokemons):
+        SectionView(bloc.state.pokemonSection) { pokemons in
             List {
                 ForEach(pokemons.filtered(by: bloc.state.filters)) { pokemon in
                     NavigationLink(pokemon.name) {
@@ -58,9 +30,15 @@ private extension HomePage {
                 }
             }
         }
+        .navigationTitle(bloc.state.title)
+        .toolbar {
+            NavigationLink(bloc.state.filters.isEmpty ? "Filters" : "Filters (\(bloc.state.filters.count))") {
+                router.homeShowFilters(selected: bloc.state.filters, onUpdate: { bloc.handle(.didUpdateFilters($0)) })
+            }
+        }
+        .onLoad(perform: { bloc.handle(.initialize) })
     }
 }
-
 extension Array where Element == Pokemon {
     
     func filtered(by filters: [PokemonFilter]) -> Self {

@@ -51,6 +51,10 @@
 		0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */; };
 		0AFF4EC826E2BCB0004746D7 /* PokemonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */; };
 		0AFF4ECA26E2C1FD004746D7 /* ViewWhenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC926E2C1FD004746D7 /* ViewWhenModifier.swift */; };
+		0AFF4ECC26E2C7B5004746D7 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4ECB26E2C7B5004746D7 /* SectionView.swift */; };
+		0AFF4ECE26E2CA16004746D7 /* PokemonMovesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4ECD26E2CA16004746D7 /* PokemonMovesRow.swift */; };
+		0AFF4ED026E2CA5E004746D7 /* PokemonSpritesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4ECF26E2CA5E004746D7 /* PokemonSpritesRow.swift */; };
+		0AFF4ED226E2CAC1004746D7 /* PokemonPhysiqueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4ED126E2CAC1004746D7 /* PokemonPhysiqueList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +103,10 @@
 		0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFilter.swift; sourceTree = "<group>"; };
 		0AFF4EC926E2C1FD004746D7 /* ViewWhenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWhenModifier.swift; sourceTree = "<group>"; };
+		0AFF4ECB26E2C7B5004746D7 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		0AFF4ECD26E2CA16004746D7 /* PokemonMovesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonMovesRow.swift; sourceTree = "<group>"; };
+		0AFF4ECF26E2CA5E004746D7 /* PokemonSpritesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpritesRow.swift; sourceTree = "<group>"; };
+		0AFF4ED126E2CAC1004746D7 /* PokemonPhysiqueList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonPhysiqueList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +272,10 @@
 			children = (
 				0AC42B0426E232E90008AC74 /* UnwrapView.swift */,
 				0AFF4EB626E2906D004746D7 /* URLImage.swift */,
+				0AFF4ECB26E2C7B5004746D7 /* SectionView.swift */,
+				0AFF4ECD26E2CA16004746D7 /* PokemonMovesRow.swift */,
+				0AFF4ECF26E2CA5E004746D7 /* PokemonSpritesRow.swift */,
+				0AFF4ED126E2CAC1004746D7 /* PokemonPhysiqueList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,6 +503,7 @@
 				0AC42B0826E2373F0008AC74 /* Injected.swift in Sources */,
 				0AC42B0A26E237780008AC74 /* Dependencies.swift in Sources */,
 				0AFF4EC126E29B16004746D7 /* FiltersBloc+Models.swift in Sources */,
+				0AFF4ECC26E2C7B5004746D7 /* SectionView.swift in Sources */,
 				0AFF4EB926E2940D004746D7 /* String+Extension.swift in Sources */,
 				0A57807226E26D5B00033D9A /* APIParameterEncoding.swift in Sources */,
 				0A57806B26E26BB800033D9A /* Backend.swift in Sources */,
@@ -505,8 +518,10 @@
 				0A57806926E2691D00033D9A /* APIRequest.swift in Sources */,
 				0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */,
 				0AC42B0D26E23A750008AC74 /* AppAssembly.swift in Sources */,
+				0AFF4ED226E2CAC1004746D7 /* PokemonPhysiqueList.swift in Sources */,
 				0AFF4EAF26E2820A004746D7 /* PokemonDetailBloc+Models.swift in Sources */,
 				0AC42AF826E22FA10008AC74 /* GetPokemonById.swift in Sources */,
+				0AFF4ED026E2CA5E004746D7 /* PokemonSpritesRow.swift in Sources */,
 				0AC42ADE26E22E7F0008AC74 /* App.swift in Sources */,
 				0AFF4EA126E27EB8004746D7 /* HomeRouter.swift in Sources */,
 				0AC42AFC26E230680008AC74 /* HomePage.swift in Sources */,
@@ -523,6 +538,7 @@
 				0AC42AFE26E2308E0008AC74 /* HomeBloc.swift in Sources */,
 				0AFF4EA526E28057004746D7 /* AppCoordinator.swift in Sources */,
 				0AFF4EAA26E281AA004746D7 /* PokemonDetailPage.swift in Sources */,
+				0AFF4ECE26E2CA16004746D7 /* PokemonMovesRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

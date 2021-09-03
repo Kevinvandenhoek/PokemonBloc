@@ -22,95 +22,20 @@ struct PokemonDetailPage: View {
     
     // MARK: View
     var body: some View {
-        contentView
-            .navigationTitle(bloc.state.title)
-            .onLoad(perform: { bloc.handle(.initialize) })
-    }
-}
-
-// MARK: View Builders
-private extension PokemonDetailPage {
-    
-    @ViewBuilder var contentView: some View {
-        switch bloc.state.detailSection {
-        case .initial:
-            Color.clear
-        case .loading:
-            ProgressView()
-        case .error(let title, let description, let action):
-            VStack {
-                Text(title)
-                Text(description)
-                OptionalView(action) { action in
-                    Button(action.title, action: action.invoke)
-                }
-            }
-        case .loaded(let pokemon):
+        SectionView(bloc.state.detailSection) { details in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(alignment: .top) {
-                            Text("Types:")
-                                .fontWeight(.bold)
-                            Text(pokemon.types.map({ $0.capitalized }).joined(separator: ", "))
-                        }
-                        HStack(alignment: .top) {
-                            Text("Height:")
-                                .fontWeight(.bold)
-                            HStack(spacing: 4) {
-                                Text("\(pokemon.height)")
-                                Text("fietsbellen")
-                                    .foregroundColor(Color.gray)
-                            }
-                        }
-                        HStack(alignment: .top) {
-                            Text("Weight:")
-                                .fontWeight(.bold)
-                            HStack(spacing: 4) {
-                                Text("\(pokemon.weight)")
-                                Text("roze koeken")
-                                    .foregroundColor(Color.gray)
-                            }
-                        }
-                    }
+                    PokemonStatsRow(details: details)
                     Divider()
-                    VStack(alignment: .leading) {
-                        Text("Moves:")
-                            .fontWeight(.bold)
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(alignment: .center, spacing: 10) {
-                                ForEach(pokemon.moves) { move in
-                                    Text(move)
-                                        .padding(10)
-                                        .background(Color(red: 0, green: 0, blue: 0, opacity: 0.07))
-                                        .cornerRadius(10)
-                                }
-                            }
-                        }
-                    }
+                    PokemonMovesRow(moves: details.moves)
                     Divider()
-                    Spacer()
-                    VStack(alignment: .center) {
-                        HStack {
-                            VStack {
-                                Text("Regular")
-                                    .fontWeight(.bold)
-                                URLImage(url: pokemon.sprites.normal.front)
-                                URLImage(url: pokemon.sprites.normal.back)
-                            }
-                            VStack {
-                                Text("Shiny")
-                                    .fontWeight(.bold)
-                                URLImage(url: pokemon.sprites.shiny.front)
-                                URLImage(url: pokemon.sprites.shiny.back)
-                            }
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    Spacer()
+                    PokemonSpritesRow(sprites: details.sprites)
+                        .frame(maxWidth: .infinity)
                 }
                 .padding(.all, 16)
             }
         }
+        .navigationTitle(bloc.state.title)
+        .onLoad(perform: { bloc.handle(.initialize) })
     }
 }
