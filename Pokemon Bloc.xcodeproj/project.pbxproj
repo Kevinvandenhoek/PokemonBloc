@@ -48,6 +48,7 @@
 		0AFF4EBF26E29B0F004746D7 /* FiltersBloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EBE26E29B0F004746D7 /* FiltersBloc.swift */; };
 		0AFF4EC126E29B16004746D7 /* FiltersBloc+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */; };
 		0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */; };
+		0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		0AFF4EBE26E29B0F004746D7 /* FiltersBloc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersBloc.swift; sourceTree = "<group>"; };
 		0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiltersBloc+Models.swift"; sourceTree = "<group>"; };
 		0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRouter.swift; sourceTree = "<group>"; };
+		0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		0AC42AFF26E230B60008AC74 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				0AFF4EC426E2B477004746D7 /* ViewModifiers */,
 				0AFF4E9D26E27A92004746D7 /* Models */,
 				0AF4F41426E24D24000C4208 /* PropertyWrapper */,
 				0AF4F40E26E24934000C4208 /* Extensions */,
@@ -394,6 +397,14 @@
 			path = Bloc;
 			sourceTree = "<group>";
 		};
+		0AFF4EC426E2B477004746D7 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,6 +490,7 @@
 				0A57806B26E26BB800033D9A /* Backend.swift in Sources */,
 				0AFF4E9F26E27A9F004746D7 /* ButtonAction.swift in Sources */,
 				0AFF4EB126E28248004746D7 /* ViewSection.swift in Sources */,
+				0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */,
 				0AFF4EA726E28083004746D7 /* Coordinator.swift in Sources */,
 				0AC42AF126E22EDA0008AC74 /* Pokemon.swift in Sources */,
 				0AF4F41926E25881000C4208 /* HomeBloc+Models.swift in Sources */,

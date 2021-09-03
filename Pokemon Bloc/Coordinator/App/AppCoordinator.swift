@@ -11,7 +11,12 @@ struct AppCoordinator: Coordinator {
     
     var body: some View {
         NavigationView {
-            HomePage(router: HomeRouter(onDidSelectPokemon: onDidSelect, onDidTapFilters: onDidTapFilters))
+            HomePage(
+                router: HomeRouter(
+                    onDidSelectPokemon: onDidSelect,
+                    onDidTapFilters: onDidTapFilters
+                )
+            )
         }
     }
 }
@@ -23,7 +28,7 @@ extension AppCoordinator {
         return AnyView(PokemonDetailPage(router: PokemonDetailRouter(), pokemon: pokemon))
     }
     
-    func onDidTapFilters(_ onUpdate: FilterCallback) -> AnyView {
-        return AnyView(FiltersPage(router: FiltersRouter()))
+    func onDidTapFilters(_ filters: [PokemonFilter], _ onUpdate: @escaping FilterCallback) -> AnyView {
+        return AnyView(FiltersPage(router: FiltersRouter(), filters: filters, onUpdate: onUpdate))
     }
 }

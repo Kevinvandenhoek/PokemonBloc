@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeRouter {
     
     var onDidSelectPokemon: (Pokemon) -> AnyView
-    var onDidTapFilters: (FilterCallback) -> AnyView
+    var onDidTapFilters: ([PokemonFilter], @escaping FilterCallback) -> AnyView
 }
 
 typealias FilterCallback = ([PokemonFilter]) -> Void

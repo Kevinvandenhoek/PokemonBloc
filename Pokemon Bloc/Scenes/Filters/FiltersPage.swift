@@ -10,13 +10,14 @@ import SwiftUI
 struct FiltersPage: View {
     
     // MARK: State
-    @ObservedObject var bloc: FiltersBloc = FiltersBloc()
+    @ObservedObject var bloc: FiltersBloc
     
     private let router: FiltersRouter
     
     // MARK: Lifecycle
-    init(router: FiltersRouter) {
+    init(router: FiltersRouter, filters: [PokemonFilter], onUpdate: @escaping FilterCallback) {
         self.router = router
+        self.bloc = FiltersBloc(filters: filters, onUpdate: onUpdate)
     }
     
     // MARK: View
@@ -46,7 +47,8 @@ struct FiltersPage: View {
             }
             .padding(.all, 16)
         }
-        .onAppear(perform: { bloc.handle(.initialize) })
+        .navigationTitle(bloc.state.title)
+        .onLoad(perform: { bloc.handle(.initialize) })
     }
 }
 

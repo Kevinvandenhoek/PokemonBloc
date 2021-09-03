@@ -11,10 +11,25 @@ import SwiftUI
 final class FiltersBloc: Bloc {
     
     // MARK: State
-    @UIPublished var state: State = State(title: "Home")
+    @UIPublished var state: State
     
     // MARK: State (private)
     @Injected private var pokemonRepository: PokemonRepository
+    
+    private var onUpdate: FilterCallback
+    
+    init(filters: [PokemonFilter], onUpdate: @escaping FilterCallback) {
+        self.onUpdate = onUpdate
+        self.state = State(title: "Filters", filters: "abcdefghijklmnopqrstuvwxyz".map({ letter in
+            let letter = String(letter)
+            return FilterState(filter: .nameContains(letter), isEnabled: filters.contains(where: { filter in
+                switch filter {
+                case .nameContains(let string):
+                    return letter == string
+                }
+            }))
+        }))
+    }
     
     // MARK: Methods
     func handle(_ event: Event) { Task {
@@ -31,9 +46,7 @@ final class FiltersBloc: Bloc {
 private extension FiltersBloc {
     
     func initialize() async {
-        state.filters = "abcdefghijklmnopqrstuvwxyz".map({ string in
-            return FilterState(filter: .nameContains(String(string)), isEnabled: false)
-        })
+        // Nothing here
     }
     
     func didTapFilter(_ filter: PokemonFilter) {
@@ -41,5 +54,6 @@ private extension FiltersBloc {
             guard filterState.filter == filter else { return filterState }
             return FilterState(filter: filter, isEnabled: !filterState.isEnabled)
         })
+        onUpdate(state.filters.filter({ $0.isEnabled }).map({ $0.filter }))
     }
 }

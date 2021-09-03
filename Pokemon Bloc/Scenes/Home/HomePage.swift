@@ -25,12 +25,12 @@ struct HomePage: View {
             .navigationTitle(bloc.state.title)
             .toolbar {
                 NavigationLink("Filters") {
-                    router.onDidTapFilters({ filters in
+                    router.onDidTapFilters(bloc.state.filters, { filters in
                         bloc.handle(.didUpdateFilters(filters))
                     })
                 }
             }
-            .onAppear(perform: { bloc.handle(.initialize) })
+            .onLoad(perform: { bloc.handle(.initialize) })
     }
 }
 
@@ -53,12 +53,26 @@ private extension HomePage {
             }
         case .loaded(let pokemons):
             List {
-                ForEach(pokemons) { pokemon in
+                ForEach(pokemons.filtered(by: bloc.state.filters)) { pokemon in
                     NavigationLink(pokemon.name) {
                         router.onDidSelectPokemon(pokemon)
                     }
                 }
             }
         }
+    }
+}
+
+extension Array where Element == Pokemon {
+    
+    func filtered(by filters: [PokemonFilter]) -> Self {
+        return filter({ pokemon in
+            return !filters.map({ filter in
+                switch filter {
+                case .nameContains(let string):
+                    return pokemon.name.lowercased().contains(string.lowercased())
+                }
+            }).contains(false)
+        })
     }
 }

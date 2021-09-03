@@ -24,7 +24,7 @@ struct PokemonDetailPage: View {
     var body: some View {
         contentView
             .navigationTitle(bloc.state.title)
-            .onAppear(perform: { bloc.handle(.initialize) })
+            .onLoad(perform: { bloc.handle(.initialize) })
     }
 }
 
