@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A665D5C26E2430C0058193B /* Dependencies+Autoregistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A665D5B26E2430C0058193B /* Dependencies+Autoregistration.swift */; };
-		0AC42ADE26E22E7F0008AC74 /* Pokemon_BlocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42ADD26E22E7F0008AC74 /* Pokemon_BlocApp.swift */; };
+		0AC42ADE26E22E7F0008AC74 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42ADD26E22E7F0008AC74 /* App.swift */; };
 		0AC42AE226E22E820008AC74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42AE126E22E820008AC74 /* Assets.xcassets */; };
 		0AC42AE526E22E820008AC74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42AE426E22E820008AC74 /* Preview Assets.xcassets */; };
 		0AC42AEE26E22EA40008AC74 /* PokemonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42AED26E22EA40008AC74 /* PokemonRepository.swift */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		0A665D5B26E2430C0058193B /* Dependencies+Autoregistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dependencies+Autoregistration.swift"; sourceTree = "<group>"; };
 		0AC42ADA26E22E7F0008AC74 /* Pokemon Bloc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Bloc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AC42ADD26E22E7F0008AC74 /* Pokemon_BlocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon_BlocApp.swift; sourceTree = "<group>"; };
+		0AC42ADD26E22E7F0008AC74 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		0AC42AE126E22E820008AC74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AC42AE426E22E820008AC74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0AC42AED26E22EA40008AC74 /* PokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepository.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				0AC42AFF26E230B60008AC74 /* General */,
 				0AC42AF926E2305D0008AC74 /* Scenes */,
 				0AC42AEB26E22E910008AC74 /* Domain */,
-				0AC42ADD26E22E7F0008AC74 /* Pokemon_BlocApp.swift */,
+				0AC42ADD26E22E7F0008AC74 /* App.swift */,
 				0AC42AE126E22E820008AC74 /* Assets.xcassets */,
 				0AC42AE326E22E820008AC74 /* Preview Content */,
 			);
@@ -283,7 +283,7 @@
 				0AC42AF126E22EDA0008AC74 /* Pokemon.swift in Sources */,
 				0AC42B0D26E23A750008AC74 /* AppAssembly.swift in Sources */,
 				0AC42AF826E22FA10008AC74 /* GetPokemonById.swift in Sources */,
-				0AC42ADE26E22E7F0008AC74 /* Pokemon_BlocApp.swift in Sources */,
+				0AC42ADE26E22E7F0008AC74 /* App.swift in Sources */,
 				0AC42AFC26E230680008AC74 /* HomePage.swift in Sources */,
 				0AC42AEE26E22EA40008AC74 /* PokemonRepository.swift in Sources */,
 				0AC42B0226E230C20008AC74 /* Bloc.swift in Sources */,
