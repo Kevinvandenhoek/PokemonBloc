@@ -7,6 +7,6 @@
 
 import SwiftUI
 
-struct PokemonDetailRouter {
+protocol PokemonDetailRouter {
     
 }

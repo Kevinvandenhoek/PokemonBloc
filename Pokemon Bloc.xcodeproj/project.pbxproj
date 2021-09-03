@@ -49,6 +49,7 @@
 		0AFF4EC126E29B16004746D7 /* FiltersBloc+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */; };
 		0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */; };
 		0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */; };
+		0AFF4EC826E2BCB0004746D7 /* PokemonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiltersBloc+Models.swift"; sourceTree = "<group>"; };
 		0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRouter.swift; sourceTree = "<group>"; };
 		0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
+		0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				0AC42AF026E22EDA0008AC74 /* Pokemon.swift */,
 				0AC42AF226E22EEC0008AC74 /* PokemonDetails.swift */,
+				0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */,
 				0AFF4EA726E28083004746D7 /* Coordinator.swift in Sources */,
 				0AC42AF126E22EDA0008AC74 /* Pokemon.swift in Sources */,
+				0AFF4EC826E2BCB0004746D7 /* PokemonFilter.swift in Sources */,
 				0AF4F41926E25881000C4208 /* HomeBloc+Models.swift in Sources */,
 				0A57806926E2691D00033D9A /* APIRequest.swift in Sources */,
 				0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */,

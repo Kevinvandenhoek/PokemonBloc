@@ -25,9 +25,7 @@ struct HomePage: View {
             .navigationTitle(bloc.state.title)
             .toolbar {
                 NavigationLink("Filters") {
-                    router.onDidTapFilters(bloc.state.filters, { filters in
-                        bloc.handle(.didUpdateFilters(filters))
-                    })
+                    router.homeShowFilters(selected: bloc.state.filters, onUpdate: { bloc.state.filters = $0 })
                 }
             }
             .onLoad(perform: { bloc.handle(.initialize) })
@@ -55,7 +53,7 @@ private extension HomePage {
             List {
                 ForEach(pokemons.filtered(by: bloc.state.filters)) { pokemon in
                     NavigationLink(pokemon.name) {
-                        router.onDidSelectPokemon(pokemon)
+                        router.homeShowPokemon(pokemon)
                     }
                 }
             }

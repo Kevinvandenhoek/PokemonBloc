@@ -7,14 +7,10 @@
 
 import SwiftUI
 
-struct HomeRouter {
+protocol HomeRouter {
     
-    var onDidSelectPokemon: (Pokemon) -> AnyView
-    var onDidTapFilters: ([PokemonFilter], @escaping FilterCallback) -> AnyView
+    func homeShowPokemon(_ pokemon: Pokemon) -> AnyView
+    func homeShowFilters(selected: [PokemonFilter], onUpdate: @escaping FilterCallback) -> AnyView
 }
 
 typealias FilterCallback = ([PokemonFilter]) -> Void
-
-enum PokemonFilter: Equatable {
-    case nameContains(String)
-}

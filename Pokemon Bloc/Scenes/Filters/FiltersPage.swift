@@ -15,9 +15,9 @@ struct FiltersPage: View {
     private let router: FiltersRouter
     
     // MARK: Lifecycle
-    init(router: FiltersRouter, filters: [PokemonFilter], onUpdate: @escaping FilterCallback) {
+    init(router: FiltersRouter, selected: [PokemonFilter], onUpdate: @escaping FilterCallback) {
         self.router = router
-        self.bloc = FiltersBloc(filters: filters, onUpdate: onUpdate)
+        self.bloc = FiltersBloc(selected: selected, onUpdate: onUpdate)
     }
     
     // MARK: View

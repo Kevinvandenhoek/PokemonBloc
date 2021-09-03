@@ -18,11 +18,11 @@ final class FiltersBloc: Bloc {
     
     private var onUpdate: FilterCallback
     
-    init(filters: [PokemonFilter], onUpdate: @escaping FilterCallback) {
+    init(selected: [PokemonFilter], onUpdate: @escaping FilterCallback) {
         self.onUpdate = onUpdate
         self.state = State(title: "Filters", filters: "abcdefghijklmnopqrstuvwxyz".map({ letter in
             let letter = String(letter)
-            return FilterState(filter: .nameContains(letter), isEnabled: filters.contains(where: { filter in
+            return FilterState(filter: .nameContains(letter), isEnabled: selected.contains(where: { filter in
                 switch filter {
                 case .nameContains(let string):
                     return letter == string
