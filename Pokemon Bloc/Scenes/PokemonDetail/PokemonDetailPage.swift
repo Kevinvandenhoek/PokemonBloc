@@ -46,56 +46,67 @@ private extension PokemonDetailPage {
                 }
             }
         case .loaded(let pokemon):
-            VStack(alignment: .leading) {
-                HStack(alignment: .top) {
-                    Text("Types:")
-                        .fontWeight(.bold)
-                    Text(pokemon.types.map({ $0.capitalized }).joined(separator: ", "))
-                }
-                HStack(alignment: .top) {
-                    Text("Height:")
-                        .fontWeight(.bold)
-                    Text("\(pokemon.height) fietsbellen")
-                }
-                HStack(alignment: .top) {
-                    Text("Weight:")
-                        .fontWeight(.bold)
-                    Text("\(pokemon.weight) roze koeken")
-                }
-                VStack(alignment: .leading) {
-                    Text("Moves:")
-                        .fontWeight(.bold)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .center, spacing: 10) {
-                            ForEach(pokemon.moves) { move in
-                                Text(move)
-                                    .padding(10)
-                                    .background(Color(red: 0, green: 0, blue: 0, opacity: 0.07))
-                                    .cornerRadius(10)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 16) {
+                    HStack(alignment: .top) {
+                        Text("Types:")
+                            .fontWeight(.bold)
+                        Text(pokemon.types.map({ $0.capitalized }).joined(separator: ", "))
+                    }
+                    HStack(alignment: .top) {
+                        Text("Height:")
+                            .fontWeight(.bold)
+                        HStack(spacing: 4) {
+                            Text("\(pokemon.height)")
+                            Text("fietsbellen")
+                                .foregroundColor(Color.gray)
+                        }
+                    }
+                    HStack(alignment: .top) {
+                        Text("Weight:")
+                            .fontWeight(.bold)
+                        HStack(spacing: 4) {
+                            Text("\(pokemon.weight)")
+                            Text("roze koeken")
+                                .foregroundColor(Color.gray)
+                        }
+                    }
+                    Divider()
+                    VStack(alignment: .leading) {
+                        Text("Moves:")
+                            .fontWeight(.bold)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .center, spacing: 10) {
+                                ForEach(pokemon.moves) { move in
+                                    Text(move)
+                                        .padding(10)
+                                        .background(Color(red: 0, green: 0, blue: 0, opacity: 0.07))
+                                        .cornerRadius(10)
+                                }
                             }
                         }
                     }
-                }
-                .padding(.top, 10)
-                Spacer()
-                VStack(alignment: .center) {
-                    HStack {
-                        VStack {
-                            Text("regular")
-                            URLImage(url: pokemon.sprites.normal.front)
-                            URLImage(url: pokemon.sprites.normal.back)
-                        }
-                        VStack {
-                            Text("shiny")
-                            URLImage(url: pokemon.sprites.shiny.front)
-                            URLImage(url: pokemon.sprites.shiny.back)
+                    Divider()
+                    Spacer()
+                    VStack(alignment: .center) {
+                        HStack {
+                            VStack {
+                                Text("regular")
+                                URLImage(url: pokemon.sprites.normal.front)
+                                URLImage(url: pokemon.sprites.normal.back)
+                            }
+                            VStack {
+                                Text("shiny")
+                                URLImage(url: pokemon.sprites.shiny.front)
+                                URLImage(url: pokemon.sprites.shiny.back)
+                            }
                         }
                     }
+                    .frame(maxWidth: .infinity)
+                    Spacer()
                 }
-                .frame(maxWidth: .infinity)
-                Spacer()
+                .padding(.all, 16)
             }
-            .padding(.all, 16)
         }
     }
 }
