@@ -48,27 +48,29 @@ private extension PokemonDetailPage {
         case .loaded(let pokemon):
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
-                    HStack(alignment: .top) {
-                        Text("Types:")
-                            .fontWeight(.bold)
-                        Text(pokemon.types.map({ $0.capitalized }).joined(separator: ", "))
-                    }
-                    HStack(alignment: .top) {
-                        Text("Height:")
-                            .fontWeight(.bold)
-                        HStack(spacing: 4) {
-                            Text("\(pokemon.height)")
-                            Text("fietsbellen")
-                                .foregroundColor(Color.gray)
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(alignment: .top) {
+                            Text("Types:")
+                                .fontWeight(.bold)
+                            Text(pokemon.types.map({ $0.capitalized }).joined(separator: ", "))
                         }
-                    }
-                    HStack(alignment: .top) {
-                        Text("Weight:")
-                            .fontWeight(.bold)
-                        HStack(spacing: 4) {
-                            Text("\(pokemon.weight)")
-                            Text("roze koeken")
-                                .foregroundColor(Color.gray)
+                        HStack(alignment: .top) {
+                            Text("Height:")
+                                .fontWeight(.bold)
+                            HStack(spacing: 4) {
+                                Text("\(pokemon.height)")
+                                Text("fietsbellen")
+                                    .foregroundColor(Color.gray)
+                            }
+                        }
+                        HStack(alignment: .top) {
+                            Text("Weight:")
+                                .fontWeight(.bold)
+                            HStack(spacing: 4) {
+                                Text("\(pokemon.weight)")
+                                Text("roze koeken")
+                                    .foregroundColor(Color.gray)
+                            }
                         }
                     }
                     Divider()
@@ -91,12 +93,14 @@ private extension PokemonDetailPage {
                     VStack(alignment: .center) {
                         HStack {
                             VStack {
-                                Text("regular")
+                                Text("Regular")
+                                    .fontWeight(.bold)
                                 URLImage(url: pokemon.sprites.normal.front)
                                 URLImage(url: pokemon.sprites.normal.back)
                             }
                             VStack {
-                                Text("shiny")
+                                Text("Shiny")
+                                    .fontWeight(.bold)
                                 URLImage(url: pokemon.sprites.shiny.front)
                                 URLImage(url: pokemon.sprites.shiny.back)
                             }
