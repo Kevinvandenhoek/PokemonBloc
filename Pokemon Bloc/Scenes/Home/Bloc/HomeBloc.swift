@@ -11,7 +11,7 @@ import SwiftUI
 final class HomeBloc: Bloc {
     
     // MARK: State
-    @UIPublished var state: State = State(title: "Home")
+    @UIPublished private(set) var state: State = State(title: "Home")
     
     // MARK: State (private)
     @Injected private var pokemonRepository: PokemonRepository
@@ -23,6 +23,8 @@ final class HomeBloc: Bloc {
             await initialize()
         case .didUpdateFilters(let filters):
             didUpdateFilters(filters)
+        case .didTapClearFilters:
+            didTapClearFilters()
         }
     } }
 }
@@ -49,5 +51,9 @@ private extension HomeBloc {
     
     func didUpdateFilters(_ filters: [PokemonFilter]) {
         state.filters = filters
+    }
+    
+    func didTapClearFilters() {
+        state.filters = []
     }
 }

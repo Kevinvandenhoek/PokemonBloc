@@ -25,7 +25,7 @@ struct HomePage: View {
             .navigationTitle(bloc.state.title)
             .toolbar {
                 NavigationLink(bloc.state.filters.isEmpty ? "Filters" : "Filters (\(bloc.state.filters.count))") {
-                    router.homeShowFilters(selected: bloc.state.filters, onUpdate: { bloc.state.filters = $0 })
+                    router.homeShowFilters(selected: bloc.state.filters, onUpdate: { bloc.handle(.didUpdateFilters($0)) })
                 }
             }
             .onLoad(perform: { bloc.handle(.initialize) })

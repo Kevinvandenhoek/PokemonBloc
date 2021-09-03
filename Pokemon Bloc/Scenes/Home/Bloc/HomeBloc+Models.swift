@@ -17,5 +17,6 @@ extension HomeBloc {
     enum Event {
         case initialize
         case didUpdateFilters([PokemonFilter])
+        case didTapClearFilters
     }
 }

@@ -50,6 +50,7 @@
 		0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */; };
 		0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */; };
 		0AFF4EC826E2BCB0004746D7 /* PokemonFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */; };
+		0AFF4ECA26E2C1FD004746D7 /* ViewWhenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC926E2C1FD004746D7 /* ViewWhenModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRouter.swift; sourceTree = "<group>"; };
 		0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		0AFF4EC726E2BCB0004746D7 /* PokemonFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFilter.swift; sourceTree = "<group>"; };
+		0AFF4EC926E2C1FD004746D7 /* ViewWhenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWhenModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFF4EC526E2B48B004746D7 /* ViewDidLoadModifier.swift */,
+				0AFF4EC926E2C1FD004746D7 /* ViewWhenModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				0AFF4EB926E2940D004746D7 /* String+Extension.swift in Sources */,
 				0A57807226E26D5B00033D9A /* APIParameterEncoding.swift in Sources */,
 				0A57806B26E26BB800033D9A /* Backend.swift in Sources */,
+				0AFF4ECA26E2C1FD004746D7 /* ViewWhenModifier.swift in Sources */,
 				0AFF4E9F26E27A9F004746D7 /* ButtonAction.swift in Sources */,
 				0AFF4EB126E28248004746D7 /* ViewSection.swift in Sources */,
 				0AFF4EC626E2B48B004746D7 /* ViewDidLoadModifier.swift in Sources */,
