@@ -21,10 +21,8 @@ final class HomeBloc: Bloc {
         switch event {
         case .initialize:
             await initialize()
-        case .didTap(let pokemon):
-            didTap(pokemon)
-        case .didTapFilter:
-            didTapFilter()
+        case .didUpdateFilters(let filters):
+            didUpdateFilters(filters)
         }
     } }
 }
@@ -49,11 +47,7 @@ private extension HomeBloc {
         }
     }
     
-    func didTap(_ pokemon: Pokemon) {
-        print(#function)
-    }
-    
-    func didTapFilter() {
-        print(#function)
+    func didUpdateFilters(_ filters: [PokemonFilter]) {
+        state.filters = filters
     }
 }

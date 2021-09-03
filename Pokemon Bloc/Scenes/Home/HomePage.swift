@@ -23,6 +23,13 @@ struct HomePage: View {
     var body: some View {
         contentView
             .navigationTitle(bloc.state.title)
+            .toolbar {
+                NavigationLink("Filters") {
+                    router.onDidTapFilters({ filters in
+                        bloc.handle(.didUpdateFilters(filters))
+                    })
+                }
+            }
             .onAppear(perform: { bloc.handle(.initialize) })
     }
 }

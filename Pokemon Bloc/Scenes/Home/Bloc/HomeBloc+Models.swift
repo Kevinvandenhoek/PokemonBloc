@@ -10,12 +10,12 @@ extension HomeBloc {
     
     struct State {
         let title: String
+        var filters: [PokemonFilter] = []
         var pokemonSection: ViewSection<[Pokemon]> = .initial
     }
     
     enum Event {
         case initialize
-        case didTap(Pokemon)
-        case didTapFilter
+        case didUpdateFilters([PokemonFilter])
     }
 }

@@ -44,6 +44,10 @@
 		0AFF4EB526E28464004746D7 /* GetPokemonByIdAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EB426E28464004746D7 /* GetPokemonByIdAPIRequest.swift */; };
 		0AFF4EB726E2906D004746D7 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EB626E2906D004746D7 /* URLImage.swift */; };
 		0AFF4EB926E2940D004746D7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EB826E2940D004746D7 /* String+Extension.swift */; };
+		0AFF4EBC26E29AB2004746D7 /* FiltersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EBB26E29AB2004746D7 /* FiltersPage.swift */; };
+		0AFF4EBF26E29B0F004746D7 /* FiltersBloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EBE26E29B0F004746D7 /* FiltersBloc.swift */; };
+		0AFF4EC126E29B16004746D7 /* FiltersBloc+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */; };
+		0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,10 @@
 		0AFF4EB426E28464004746D7 /* GetPokemonByIdAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonByIdAPIRequest.swift; sourceTree = "<group>"; };
 		0AFF4EB626E2906D004746D7 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		0AFF4EB826E2940D004746D7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		0AFF4EBB26E29AB2004746D7 /* FiltersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPage.swift; sourceTree = "<group>"; };
+		0AFF4EBE26E29B0F004746D7 /* FiltersBloc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersBloc.swift; sourceTree = "<group>"; };
+		0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FiltersBloc+Models.swift"; sourceTree = "<group>"; };
+		0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +213,7 @@
 		0AC42AF926E2305D0008AC74 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0AFF4EBA26E29AA9004746D7 /* Filters */,
 				0AFF4EA826E281A0004746D7 /* PokemonDetail */,
 				0AC42AFA26E230610008AC74 /* Home */,
 			);
@@ -366,6 +375,25 @@
 			path = Bloc;
 			sourceTree = "<group>";
 		};
+		0AFF4EBA26E29AA9004746D7 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF4EBD26E29B04004746D7 /* Bloc */,
+				0AFF4EBB26E29AB2004746D7 /* FiltersPage.swift */,
+				0AFF4EC226E29B20004746D7 /* FiltersRouter.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		0AFF4EBD26E29B04004746D7 /* Bloc */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF4EBE26E29B0F004746D7 /* FiltersBloc.swift */,
+				0AFF4EC026E29B16004746D7 /* FiltersBloc+Models.swift */,
+			);
+			path = Bloc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -442,8 +470,10 @@
 				0AFF4EB526E28464004746D7 /* GetPokemonByIdAPIRequest.swift in Sources */,
 				0AFF4EAD26E281E2004746D7 /* PokemonDetailBloc.swift in Sources */,
 				0A57806D26E26BC800033D9A /* APIMethod.swift in Sources */,
+				0AFF4EBF26E29B0F004746D7 /* FiltersBloc.swift in Sources */,
 				0AC42B0826E2373F0008AC74 /* Injected.swift in Sources */,
 				0AC42B0A26E237780008AC74 /* Dependencies.swift in Sources */,
+				0AFF4EC126E29B16004746D7 /* FiltersBloc+Models.swift in Sources */,
 				0AFF4EB926E2940D004746D7 /* String+Extension.swift in Sources */,
 				0A57807226E26D5B00033D9A /* APIParameterEncoding.swift in Sources */,
 				0A57806B26E26BB800033D9A /* Backend.swift in Sources */,
@@ -453,6 +483,7 @@
 				0AC42AF126E22EDA0008AC74 /* Pokemon.swift in Sources */,
 				0AF4F41926E25881000C4208 /* HomeBloc+Models.swift in Sources */,
 				0A57806926E2691D00033D9A /* APIRequest.swift in Sources */,
+				0AFF4EC326E29B20004746D7 /* FiltersRouter.swift in Sources */,
 				0AC42B0D26E23A750008AC74 /* AppAssembly.swift in Sources */,
 				0AFF4EAF26E2820A004746D7 /* PokemonDetailBloc+Models.swift in Sources */,
 				0AC42AF826E22FA10008AC74 /* GetPokemonById.swift in Sources */,
@@ -466,6 +497,7 @@
 				0A665D5C26E2430C0058193B /* Dependencies+Autoregistration.swift in Sources */,
 				0AC42AF326E22EEC0008AC74 /* PokemonDetails.swift in Sources */,
 				0AFF4E9C26E27365004746D7 /* GetAllPokemonsAPIRequest.swift in Sources */,
+				0AFF4EBC26E29AB2004746D7 /* FiltersPage.swift in Sources */,
 				0AC42B0526E232E90008AC74 /* UnwrapView.swift in Sources */,
 				0A57806626E2682900033D9A /* APIService.swift in Sources */,
 				0AC42AFE26E2308E0008AC74 /* HomeBloc.swift in Sources */,
