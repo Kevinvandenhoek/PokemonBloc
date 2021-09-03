@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Bloc {
+protocol Bloc: ObservableObject {
     associatedtype Event
     associatedtype State
     

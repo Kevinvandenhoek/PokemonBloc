@@ -23,6 +23,9 @@
 		0AC42B0826E2373F0008AC74 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42B0726E2373F0008AC74 /* Injected.swift */; };
 		0AC42B0A26E237780008AC74 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42B0926E237780008AC74 /* Dependencies.swift */; };
 		0AC42B0D26E23A750008AC74 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42B0C26E23A750008AC74 /* AppAssembly.swift */; };
+		0AF4F41326E24CBF000C4208 /* Global+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF4F41226E24CBF000C4208 /* Global+Extension.swift */; };
+		0AF4F41626E24D32000C4208 /* UIPublished.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF4F41526E24D32000C4208 /* UIPublished.swift */; };
+		0AF4F41926E25881000C4208 /* HomeBloc+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF4F41826E25881000C4208 /* HomeBloc+Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		0AC42B0726E2373F0008AC74 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		0AC42B0926E237780008AC74 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		0AC42B0C26E23A750008AC74 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		0AF4F41226E24CBF000C4208 /* Global+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global+Extension.swift"; sourceTree = "<group>"; };
+		0AF4F41526E24D32000C4208 /* UIPublished.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPublished.swift; sourceTree = "<group>"; };
+		0AF4F41826E25881000C4208 /* HomeBloc+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeBloc+Models.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +146,8 @@
 		0AC42AFA26E230610008AC74 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0AF4F41726E25873000C4208 /* Bloc */,
 				0AC42AFB26E230680008AC74 /* HomePage.swift */,
-				0AC42AFD26E2308E0008AC74 /* HomeBloc.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 		0AC42AFF26E230B60008AC74 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				0AF4F41426E24D24000C4208 /* PropertyWrapper */,
+				0AF4F40E26E24934000C4208 /* Extensions */,
 				0AC42B0626E237360008AC74 /* Injection */,
 				0AC42B0326E232DE0008AC74 /* View */,
 				0AC42B0026E230BB0008AC74 /* Bloc */,
@@ -205,6 +213,31 @@
 				0AC42B0726E2373F0008AC74 /* Injected.swift */,
 			);
 			path = PropertyWrapper;
+			sourceTree = "<group>";
+		};
+		0AF4F40E26E24934000C4208 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0AF4F41226E24CBF000C4208 /* Global+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0AF4F41426E24D24000C4208 /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0AF4F41526E24D32000C4208 /* UIPublished.swift */,
+			);
+			path = PropertyWrapper;
+			sourceTree = "<group>";
+		};
+		0AF4F41726E25873000C4208 /* Bloc */ = {
+			isa = PBXGroup;
+			children = (
+				0AC42AFD26E2308E0008AC74 /* HomeBloc.swift */,
+				0AF4F41826E25881000C4208 /* HomeBloc+Models.swift */,
+			);
+			path = Bloc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,14 +311,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC42AF626E22F620008AC74 /* GetAllPokemon.swift in Sources */,
+				0AF4F41326E24CBF000C4208 /* Global+Extension.swift in Sources */,
 				0AC42B0826E2373F0008AC74 /* Injected.swift in Sources */,
 				0AC42B0A26E237780008AC74 /* Dependencies.swift in Sources */,
 				0AC42AF126E22EDA0008AC74 /* Pokemon.swift in Sources */,
+				0AF4F41926E25881000C4208 /* HomeBloc+Models.swift in Sources */,
 				0AC42B0D26E23A750008AC74 /* AppAssembly.swift in Sources */,
 				0AC42AF826E22FA10008AC74 /* GetPokemonById.swift in Sources */,
 				0AC42ADE26E22E7F0008AC74 /* App.swift in Sources */,
 				0AC42AFC26E230680008AC74 /* HomePage.swift in Sources */,
 				0AC42AEE26E22EA40008AC74 /* PokemonRepository.swift in Sources */,
+				0AF4F41626E24D32000C4208 /* UIPublished.swift in Sources */,
 				0AC42B0226E230C20008AC74 /* Bloc.swift in Sources */,
 				0A665D5C26E2430C0058193B /* Dependencies+Autoregistration.swift in Sources */,
 				0AC42AF326E22EEC0008AC74 /* PokemonDetails.swift in Sources */,

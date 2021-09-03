@@ -19,6 +19,6 @@ enum GetAllPokemonError: Error {
 struct GetAllPokemonService: GetAllPokemon {
     
     func invoke() async -> Result<[Pokemon], GetAllPokemonError> {
-        return .success([])
+        return .success([Pokemon(id: "lol", name: "arie")])
     }
 }
