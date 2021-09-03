@@ -10,10 +10,10 @@ import SwiftUI
 
 final class HomeBloc: Bloc {
     
-    // MARK: Internal properties
-    @UIPublished var state: State = State(title: "Home", pokemons: nil)
+    // MARK: State
+    @UIPublished var state: State = State(title: "Home")
     
-    // MARK: Private properties
+    // MARK: State (private)
     @Injected private var pokemonRepository: PokemonRepository
     
     // MARK: Methods
@@ -33,11 +33,19 @@ final class HomeBloc: Bloc {
 private extension HomeBloc {
     
     func initialize() async {
+        state.pokemonSection = .loading
         switch await pokemonRepository.getAll() {
         case .success(let pokemons):
-            state.pokemons = pokemons
+            state.pokemonSection = .loaded(pokemons)
         case .failure(let error):
-            state.title = "whoopsie daisy, \(error.localizedDescription)"
+            state.pokemonSection = .error(
+                title: "woopsie daisy",
+                description: "we dun goofed: \(error.localizedDescription)",
+                action: ButtonAction(
+                    title: "retry",
+                    invoke: { [weak self] in self?.handle(.initialize) }
+                )
+            )
         }
     }
     

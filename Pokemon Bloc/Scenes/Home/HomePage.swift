@@ -9,17 +9,49 @@ import SwiftUI
 
 struct HomePage: View {
     
+    // MARK: State
     @ObservedObject var bloc: HomeBloc = HomeBloc()
     
+    private let router: HomeRouter
+    
+    // MARK: Lifecycle
+    init(router: HomeRouter) {
+        self.router = router
+    }
+    
+    // MARK: View
     var body: some View {
-        List {
-            Text(bloc.state.title)
-            OptionalView(bloc.state.pokemons) { pokemons in
+        contentView
+            .navigationTitle(bloc.state.title)
+            .onAppear(perform: { bloc.handle(.initialize) })
+    }
+}
+
+// MARK: View Builders
+private extension HomePage {
+    
+    @ViewBuilder var contentView: some View {
+        switch bloc.state.pokemonSection {
+        case .initial:
+            Color.clear
+        case .loading:
+            ProgressView()
+        case .error(let title, let description, let action):
+            VStack {
+                Text(title)
+                Text(description)
+                OptionalView(action) { action in
+                    Button(action.title, action: action.invoke)
+                }
+            }
+        case .loaded(let pokemons):
+            List {
                 ForEach(pokemons) { pokemon in
-                    Text(pokemon.name)
+                    NavigationLink(pokemon.name) {
+                        router.onDidSelectPokemon(pokemon)
+                    }
                 }
             }
         }
-        .onAppear(perform: { bloc.handle(.initialize) })
     }
 }

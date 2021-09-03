@@ -9,8 +9,8 @@
 extension HomeBloc {
     
     struct State {
-        var title: String
-        var pokemons: [Pokemon]?
+        let title: String
+        var pokemonSection: ViewSection<[Pokemon]> = .initial
     }
     
     enum Event {

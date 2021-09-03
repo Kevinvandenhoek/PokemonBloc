@@ -10,5 +10,21 @@ import Foundation
 struct PokemonDetails: Identifiable {
     
     var id: String { pokemon.id }
+    
     let pokemon: Pokemon
+    let types: [String]
+    let moves: [String]
+    let height: Int
+    let weight: Int
+    let sprites: Sprites
+    
+    struct Sprites {
+        let normal: SpriteSet
+        let shiny: SpriteSet
+    }
+    
+    struct SpriteSet {
+        let front: URL
+        let back: URL
+    }
 }

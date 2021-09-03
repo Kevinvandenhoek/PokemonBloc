@@ -16,7 +16,7 @@ struct Pokemon_BlocApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            AppCoordinator()
         }
     }
 }

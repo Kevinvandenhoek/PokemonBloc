@@ -18,7 +18,21 @@ enum GetAllPokemonError: Error {
 
 struct GetAllPokemonService: GetAllPokemon {
     
+    @Injected var api: API
+    
+    init() { } // Needed because otherwise auto registration will attempt to inject propertyWrappers
+    
     func invoke() async -> Result<[Pokemon], GetAllPokemonError> {
-        return .success([Pokemon(id: "lol", name: "arie")])
+        switch await api.request(GetAllPokemonsAPIRequest()) {
+        case .success(let response):
+            let pokemons: [Pokemon] = response.results?.compactMap({ entity in
+                guard let id = entity.url?.absoluteString.split(separator: "/").last,
+                      let name = entity.name?.capitalized else { return nil }
+                return Pokemon(id: String(id), name: name)
+            }) ?? []
+            return .success(pokemons)
+        case .failure:
+            return .failure(.notFound)
+        }
     }
 }

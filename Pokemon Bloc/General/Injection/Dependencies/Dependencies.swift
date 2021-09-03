@@ -32,7 +32,7 @@ struct Dependencies {
         }
     }
     
-    static func register<T>(_ type: T.Type, factory: @escaping () -> T?, style: ResolveStyle = .alwaysFresh) {
+    static func register<T>(_ type: T.Type, _ factory: @escaping () -> T?, style: ResolveStyle = .alwaysFresh) {
         graph[Registration(type: type, resolveStyle: style, factory: factory)] = .unresolved
     }
 }
