@@ -7,10 +7,10 @@
 
 struct Dependencies {
     
-    private static var ledger: [Registration: ResolveState] = [:]
+    private static var graph: [Registration: ResolveState] = [:]
     
     static func resolve<T>() -> T? {
-        guard let result = ledger.first(where: { $0.key.type == T.self }) else {
+        guard let result = graph.first(where: { $0.key.type == T.self }) else {
             assertionFailure("\(T.self) not registered")
             return nil
         }
@@ -26,14 +26,14 @@ struct Dependencies {
                     assertionFailure("factory couldn't produce \(T.self)")
                     return nil
                 }
-                ledger[result.key] = .resolved(value)
+                graph[result.key] = .resolved(value)
                 return value
             }
         }
     }
     
     static func register<T>(_ type: T.Type, factory: @escaping () -> T?, style: ResolveStyle = .alwaysFresh) {
-        ledger[Registration(type: type, resolveStyle: style, factory: factory)] = .unresolved
+        graph[Registration(type: type, resolveStyle: style, factory: factory)] = .unresolved
     }
 }
 

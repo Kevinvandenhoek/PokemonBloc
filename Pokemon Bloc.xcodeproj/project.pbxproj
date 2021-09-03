@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A665D5C26E2430C0058193B /* Dependencies+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A665D5B26E2430C0058193B /* Dependencies+Extension.swift */; };
+		0A665D5C26E2430C0058193B /* Dependencies+Autoregistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A665D5B26E2430C0058193B /* Dependencies+Autoregistration.swift */; };
 		0AC42ADE26E22E7F0008AC74 /* Pokemon_BlocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC42ADD26E22E7F0008AC74 /* Pokemon_BlocApp.swift */; };
 		0AC42AE226E22E820008AC74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42AE126E22E820008AC74 /* Assets.xcassets */; };
 		0AC42AE526E22E820008AC74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42AE426E22E820008AC74 /* Preview Assets.xcassets */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A665D5B26E2430C0058193B /* Dependencies+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dependencies+Extension.swift"; sourceTree = "<group>"; };
+		0A665D5B26E2430C0058193B /* Dependencies+Autoregistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dependencies+Autoregistration.swift"; sourceTree = "<group>"; };
 		0AC42ADA26E22E7F0008AC74 /* Pokemon Bloc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Bloc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC42ADD26E22E7F0008AC74 /* Pokemon_BlocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon_BlocApp.swift; sourceTree = "<group>"; };
 		0AC42AE126E22E820008AC74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,10 +175,9 @@
 		0AC42B0626E237360008AC74 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
+				0AF4F40D26E24791000C4208 /* PropertyWrapper */,
+				0AF4F40C26E24783000C4208 /* Dependencies */,
 				0AC42B0B26E23A6B0008AC74 /* Assembly */,
-				0AC42B0726E2373F0008AC74 /* Injected.swift */,
-				0AC42B0926E237780008AC74 /* Dependencies.swift */,
-				0A665D5B26E2430C0058193B /* Dependencies+Extension.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -189,6 +188,23 @@
 				0AC42B0C26E23A750008AC74 /* AppAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		0AF4F40C26E24783000C4208 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				0AC42B0926E237780008AC74 /* Dependencies.swift */,
+				0A665D5B26E2430C0058193B /* Dependencies+Autoregistration.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		0AF4F40D26E24791000C4208 /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0AC42B0726E2373F0008AC74 /* Injected.swift */,
+			);
+			path = PropertyWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +287,7 @@
 				0AC42AFC26E230680008AC74 /* HomePage.swift in Sources */,
 				0AC42AEE26E22EA40008AC74 /* PokemonRepository.swift in Sources */,
 				0AC42B0226E230C20008AC74 /* Bloc.swift in Sources */,
-				0A665D5C26E2430C0058193B /* Dependencies+Extension.swift in Sources */,
+				0A665D5C26E2430C0058193B /* Dependencies+Autoregistration.swift in Sources */,
 				0AC42AF326E22EEC0008AC74 /* PokemonDetails.swift in Sources */,
 				0AC42B0526E232E90008AC74 /* UnwrapView.swift in Sources */,
 				0AC42AFE26E2308E0008AC74 /* HomeBloc.swift in Sources */,

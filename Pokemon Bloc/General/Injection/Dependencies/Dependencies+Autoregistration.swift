@@ -1,6 +1,6 @@
 //
-//  Dependencies+Extension.swift
-//  Dependencies+Extension
+//  Dependencies+Autoregistration.swift
+//  Dependencies+Autoregistration
 //
 //  Created by Kevin van den Hoek on 03/09/2021.
 //
