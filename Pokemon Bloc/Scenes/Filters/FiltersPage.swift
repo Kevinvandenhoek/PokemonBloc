@@ -28,21 +28,20 @@ struct FiltersPage: View {
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
-                ForEach(bloc.state.filters, id: \.filter.id) { filterState in
+                ForEach($bloc.state.filters, id: \.filter.id) { $filterState in
                     HStack(spacing: 3) {
                         Text("name must contain: ")
                             .foregroundColor(Color.black.opacity(0.7))
-                        Text(filterState.filter.name)
-                            .fontWeight(.bold)
+                        Toggle(filterState.filter.name, isOn: $filterState.isEnabled)
+                            .onChange(of: filterState.isEnabled, perform: { newValue in
+                                bloc.handle(.didTapFilter(filterState.filter))
+                            })
                         Spacer()
                     }
                     .opacity(filterState.isEnabled ? 1 : 0.6)
                     .padding(.all, 10)
                     .background(Color.black.opacity(filterState.isEnabled ? 0.07 : 0))
                     .cornerRadius(10)
-                    .onTapGesture {
-                        bloc.handle(.didTapFilter(filterState.filter))
-                    }
                 }
             }
             .padding(.all, 16)
@@ -65,3 +64,4 @@ private extension PokemonFilter {
         }
     }
 }
+

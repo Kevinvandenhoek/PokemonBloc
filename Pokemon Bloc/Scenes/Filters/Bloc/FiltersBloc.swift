@@ -11,7 +11,7 @@ import SwiftUI
 final class FiltersBloc: Bloc {
     
     // MARK: State
-    @UIPublished var state: State
+    @UIPublished var state: FiltersBlocState
     
     // MARK: State (private)
     @Injected private var pokemonRepository: PokemonRepository
@@ -50,10 +50,6 @@ private extension FiltersBloc {
     }
     
     func didTapFilter(_ filter: PokemonFilter) {
-        state.filters = state.filters.map({ filterState in
-            guard filterState.filter == filter else { return filterState }
-            return FilterState(filter: filter, isEnabled: !filterState.isEnabled)
-        })
         onUpdate(state.filters.filter({ $0.isEnabled }).map({ $0.filter }))
     }
 }

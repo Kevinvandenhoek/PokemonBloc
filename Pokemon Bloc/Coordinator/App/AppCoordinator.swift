@@ -19,12 +19,12 @@ struct AppCoordinator: Coordinator {
 // MARK: HomeRouter
 extension AppCoordinator: HomeRouter {
     
-    func homeShowPokemon(_ pokemon: Pokemon) -> AnyView {
-        return AnyView(PokemonDetailPage(router: self, pokemon: pokemon))
+    func homeShowPokemon(_ pokemon: Pokemon) -> PokemonDetailPage {
+        PokemonDetailPage(router: self, pokemon: pokemon)
     }
     
-    func homeShowFilters(selected: [PokemonFilter], onUpdate: @escaping FilterCallback) -> AnyView {
-        return AnyView(FiltersPage(router: self, selected: selected, onUpdate: onUpdate))
+    func homeShowFilters(selected: [PokemonFilter], onUpdate: @escaping FilterCallback) -> FiltersPage {
+        FiltersPage(router: self, selected: selected, onUpdate: onUpdate)
     }
 }
 

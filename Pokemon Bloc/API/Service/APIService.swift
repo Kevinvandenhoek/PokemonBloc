@@ -52,7 +52,7 @@ private extension APIService {
                     }
                 } catch {
                     let response = String(decoding: data, as: UTF8.self)
-                    print("failed to decode \(response), request was \(urlRequest.url?.absoluteString)")
+                    print("failed to decode \(response), request was \(urlRequest.url?.absoluteString ?? "")")
                     completion(.failure(.decodingError))
                 }
             } else if let response = response as? HTTPURLResponse {

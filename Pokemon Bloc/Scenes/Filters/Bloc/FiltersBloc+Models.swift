@@ -9,19 +9,19 @@ import Foundation
 
 // MARK: Types
 extension FiltersBloc {
-    
-    struct State {
+    struct FiltersBlocState {
         let title: String
         var filters: [FilterState] = []
     }
-    
+
     struct FilterState {
         let filter: PokemonFilter
         var isEnabled: Bool
     }
-    
+
     enum Event {
         case initialize
         case didTapFilter(PokemonFilter)
     }
 }
+
